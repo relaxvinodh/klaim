@@ -1,7 +1,14 @@
 .App {
-  text-align: center;
+  padding: 40px;
 }
-
+.error-message {
+  margin-left: 10px;
+  color: red;
+}
+.form-login {
+  max-width: 400px;
+  margin-top: 25px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
