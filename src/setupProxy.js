@@ -1,3 +1,11 @@
+function wait(ms) {
+  var start = new Date().getTime()
+  var end = start
+  while (end < start + ms) {
+    end = new Date().getTime()
+  }
+}
+
 const MOCK_DATA = {
   login: {
     success: true,
@@ -45,7 +53,13 @@ module.exports = function (app) {
   app.post('/api/login', (req, res) => res.send(MOCK_DATA.login))
   app.get('/api/info', (req, res) => res.send(MOCK_DATA.info))
   app.get('/api/profile', (req, res) => res.send(MOCK_DATA.profile))
-  app.get('/api/author', (req, res) => res.send(MOCK_DATA.author))
-  app.get('/api/quote', (req, res) => res.send(MOCK_DATA.quote))
+  app.get('/api/author', (req, res) => {
+    wait(5000)
+    res.send(MOCK_DATA.author)
+  })
+  app.get('/api/quote', (req, res) => {
+    wait(5000)
+    res.send(MOCK_DATA.quote)
+  })
   app.delete('/api/logout', (req, res) => res.send(MOCK_DATA.logout))
 }

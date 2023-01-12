@@ -2,6 +2,7 @@ import { Button, Space } from 'antd'
 import { Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 import Info from '../pages/Info'
 import Login from '../pages/Login'
+import User from '../pages/User'
 
 const AllRoutes = () => {
   return (
@@ -9,6 +10,7 @@ const AllRoutes = () => {
       <Route element={<Layout />}>
         <Route path='/' element={<Info />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/User' element={<User />} />
       </Route>
     </Routes>
   )
@@ -26,7 +28,7 @@ function Layout() {
   }
 
   const navigateToProfile = () => {
-    navigate('/profile')
+    navigate('/user')
   }
 
   return (

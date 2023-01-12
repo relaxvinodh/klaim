@@ -20,7 +20,7 @@ const Login = () => {
 
       if (res.data.success) {
         window.localStorage.setItem('token', res.data.data.token)
-        navigate('/profile', { replace: true })
+        navigate('/user', { replace: true })
       } else {
         console.error('Login has Failed')
       }
