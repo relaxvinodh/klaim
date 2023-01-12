@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 import { useEffect, useState } from 'react'
-import { IInfo } from '../../common/types'
+import { IInfoData } from '../../common/types'
 import axiosInstance from '../../services/axiosInstance'
 
 interface Details {
@@ -14,7 +14,7 @@ const Info = () => {
   })
   useEffect(() => {
     axiosInstance
-      .get<IInfo>(`/info`)
+      .get<IInfoData>(`/info`)
       .then(({ data: { data, success } }) => {
         if (success) {
           setDetails(data)

@@ -1,12 +1,14 @@
 import { Button, Space } from 'antd'
 import { Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 import Info from '../pages/Info'
+import Login from '../pages/Login'
 
 const AllRoutes = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path='/' element={<Info />} />
+        <Route path='/login' element={<Login />} />
       </Route>
     </Routes>
   )

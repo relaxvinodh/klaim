@@ -2,8 +2,14 @@ export interface IBaseResponse {
   success: boolean
 }
 
-export interface IInfo extends IBaseResponse {
+export interface IInfoData extends IBaseResponse {
   data: {
     info: string
+  }
+}
+
+export interface ILoginData extends IBaseResponse {
+  data: {
+    token: string
   }
 }
